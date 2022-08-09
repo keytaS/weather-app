@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                class="form-control shadow-sm"
+                id="search-input"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+                id="searchButton"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Current"
+                class="form-control btn btn-light shadow-sm"
+                id="currentButton"
+              />
+            </div>
+          </div>
+        </form>
+        <h1 id="city"></h1>
+        <ul>
+            <li id="date"></li>
+            <li id="description"></li>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <img
+                src="https://lh3.googleusercontent.com/1n48LUQu0CzPU7s2VEp2o3bbQddB10Z6g87N_H76tmNyH2B_kQaHQgT3710UipbpVQ-MAIep_kpQH0QZ9dFSNe23VtOwZpzEnxtqVheHkBQGT35xFp83YovY8HX7ae5dSv0mI4J61y0=w2400"
+                alt="partly_cloudy icon"
+                class="weather-icon float-left"
+              />
+              <div class="float-left">
+                <span class="temperature" id="temperature"></span
+                ><span class="units">
+                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>
+                  Visibility: <span id="visibility"></span> km</li>
+              </li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
+<div class="forecast">
+  5 Days Forecast
+</div>
+<div class="containers">
+  <div class="row row-cols-2">
+    <div class="col-2.5">
+      <div class="card">
+        <div class="card-header">
+          Tue 21
+        </div>
+        <div class="card-body">
+          <div class="forecastDegrees">
+            <p>
+              <img
+                src="https://lh3.googleusercontent.com/B3Joon-qkNH9fnvEv-0W2l2_Hyt1tSw5dcLpMPR-7xb53Sb2cDh9U0z_YwCKTbpG1Wy8sHwqtAtW5g1sFhIGy1TVK6gSMPwsTzwEAXCGKsoTWc8Ir4EahoMnqydcygjuK__w3t9CVy0=w2400"
+                alt="cloudy icon"
+                class="weatherIcon"
+              />
+            </p>
+            <footer class="degrees">
+              21°C
+              <p class="smaller">17°C</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2.5">
+      <div class="card">
+        <div class="card-header">
+          Wed 22
+        </div>
+        <div class="card-body">
+          <div class="forecastDegrees">
+            <p>
+              <img
+                src="https://lh3.googleusercontent.com/zdkRrQA5GFrbG_EE8uT4t_Up4u3GVUt18K2gpKjnPPJ8leRDRWiit9KO2GClE946c4n8-ZjBE_VMLKU-CYwBdHVaotsOO-q7BNk5IxDMMg5BKp34pDWV5cbiiiKQ6VLfkoyw-NW_m5U=w2400"
+                alt="stormy icon"
+                class="weatherIcon"
+              />
+            </p>
+            <footer class="degrees">
+              20°C
+              <p class="smaller">15°C</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2.5">
+      <div class="card">
+        <div class="card-header">
+          Thu 23
+        </div>
+        <div class="card-body">
+          <div class="forecastDegrees">
+            <p>
+              <img
+                src="https://lh3.googleusercontent.com/GM2BYb1u_fZ3aOgZjwSyVcgbV0oPaqBjP6nTf16m6UVXn62IlUKjWR93ITcJrm29-8yK7sU9Y02ZGpHVcFR6oVDs_Yq8ezt2mZB6F23zXEEdJVfhTpwBjZIkuhDqWFoCGhm8nrMiEHo=w2400"
+                alt="rainy icon"
+                class="weatherIcon"
+              />
+            </p>
+            <footer class="degrees">
+              18°C
+              <p class="smaller">14°C</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2.5">
+      <div class="card">
+        <div class="card-header">
+          Fri 24
+        </div>
+        <div class="card-body">
+          <div class="forecastDegrees">
+            <p>
+              <img
+                src="https://lh3.googleusercontent.com/qOlniG4FjT5ZrZ2UWEoi7I1sIB7dsTDikxRJmrbieMYdhnOSdu9evBhgaNT-kIt0JEcEIYXYrSY9LfXg1Fhhn1VZkQvnZO6YZSyHrSTwTle2whHnBfOIMulGK5Uzo3B48IKv9MDsarU=w2400"
+                alt="sunny icon"
+                class="weatherIcon"
+              />
+            </p>
+            <footer class="degrees">
+              25°C
+              <p class="smaller">19°C</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2.5">
+      <div class="card">
+        <div class="card-header">
+          Sat 25
+        </div>
+        <div class="card-body">
+          <div class="forecastDegrees">
+            <p>
+              <img
+                src="https://lh3.googleusercontent.com/qOlniG4FjT5ZrZ2UWEoi7I1sIB7dsTDikxRJmrbieMYdhnOSdu9evBhgaNT-kIt0JEcEIYXYrSY9LfXg1Fhhn1VZkQvnZO6YZSyHrSTwTle2whHnBfOIMulGK5Uzo3B48IKv9MDsarU=w2400"
+                alt="sunny icon"
+                class="weatherIcon"
+              />
+            </p>
+            <footer class="degrees">
+              27°C
+              <p class="smaller">20°C</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
