@@ -92,3 +92,7 @@ li {
   margin: 10px auto;
   max-width: 600px;
 }
+.myCode {
+    text-align: center;
+    font-family: monospace;
+}
