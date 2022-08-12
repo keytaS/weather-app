@@ -15,7 +15,7 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
+    <class="container">
       <div class="weather-app">
         <form class="search-form" id="search-form">
           <div class="row">
@@ -47,6 +47,7 @@
             </div>
           </div>
         </form>
+        <div class="mainInfo">
         <h1 id="city"></h1>
         <ul>
             <li id="date"></li>
@@ -55,14 +56,16 @@
           <div class="col-6">
             <div class="clearfix">
               <img
-                src="https://lh3.googleusercontent.com/1n48LUQu0CzPU7s2VEp2o3bbQddB10Z6g87N_H76tmNyH2B_kQaHQgT3710UipbpVQ-MAIep_kpQH0QZ9dFSNe23VtOwZpzEnxtqVheHkBQGT35xFp83YovY8HX7ae5dSv0mI4J61y0=w2400"
-                alt="partly_cloudy icon"
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
                 class="weather-icon float-left"
+                id = "icon"
               />
               <div class="float-left">
                 <span class="temperature" id="temperature"></span
                 ><span class="units">
-                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="celsius-link" class="active">°C</a> |
                   <a href="#" id="fahrenheit-link">°F</a>
                 </span>
               </div>
@@ -78,11 +81,7 @@
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-    <script src="src/index.js"></script>
-  </body>
-</html>
+        </div>
 <div class="forecast">
   5 Days Forecast
 </div>
@@ -200,6 +199,11 @@
     </div>
   </div>
 </div>
+</div>
+</div>
 <div class="myCode">
 <a href="https://github.com/keytaS/weather-app" target="_blank">Open-source code</a> by Kateryna Saltykova
 </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

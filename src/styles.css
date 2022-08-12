@@ -1,12 +1,14 @@
 body {
   font-family: arial, sans-serif;
+  background-color: #fafafa;
 }
 
 h1 {
   color: #2b2b2b;
-  font-size: 24px;
-  line-height: 28px;
-  margin: 0;
+  font-size: 26px;
+  line-height: 26px;
+  margin-top: 0px;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -26,16 +28,23 @@ li {
 
 .weather-app {
   border: 1px solid #dadde1;
-  padding: 15px;
+  padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 600px;
+  background-color: white;
+}
+.mainInfo {
+  max-width: 600px;
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 10px;
 }
 
 .weather-icon {
-  width: 70px;
-  margin-right: 20px;
-  margin-top: 5px;
+  width: 80px;
+  margin-right: 5px;
+  margin-top: -7px;
 }
 
 .temperature {
@@ -55,16 +64,16 @@ li {
   margin-bottom: 20px;
 }
 .forecast {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #2b2b2b;
+  color: #0368d9;
   text-align: center;
+  opacity: 70%;
 }
 .row-cols-2 {
-  padding: 10px auto;
-  margin: 10px auto;
-  max-width: 550px;
+  max-width: 600px;
+  margin-left: 15px;
 }
 .card {
   margin-right: 15px;
@@ -93,6 +102,15 @@ li {
   max-width: 600px;
 }
 .myCode {
-    text-align: center;
-    font-family: monospace;
+  text-align: center;
+  font-family: monospace;
+}
+.active {
+  color: #2b2b2b;
+  cursor: default;
+}
+.active:hover {
+  color: #2b2b2b;
+  cursor: default;
+  text-decoration: none;
 }
