@@ -20,20 +20,20 @@ if (currentMinutes < 10) {
 let now = document.querySelector("#date");
 now.innerHTML = `${currentWeekday} ${currentHours}:${currentMinutes}`;
 
+let initialCelcius = null;
+let temperatureElement = document.querySelector("#temperature");
+
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  let fahrenheitTemperature = Math.round((initialCelcius * 9) / 5 + 32);
+  temperatureElement.innerHTML = fahrenheitTemperature;
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  temperatureElement.innerHTML = initialCelcius;
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
 }
@@ -59,6 +59,7 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  initialCelcius = Math.round(response.data.main.temp);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
