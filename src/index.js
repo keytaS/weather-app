@@ -45,7 +45,8 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML =
+    response.data.name + ` (` + response.data.sys.country + `)`;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
