@@ -83,6 +83,8 @@ function searchCity(city) {
   let apiKey = "c52ac46adf5f0f13abc3cf415215fbaf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition).catch(error);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 function submitButton(event) {
